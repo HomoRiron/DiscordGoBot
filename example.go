@@ -43,8 +43,7 @@ func messageCreate(session *discordgo.Session,msg *discordgo.MessageCreate){
 	}
 	switch(msg.Content){
 	case "Ping":
-		_,err := session.ChannelMessageSend(msg.ChannelID,"Pong")
-		errr(err)
+		_,err = session.ChannelMessageSend(msg.ChannelID,"Pong")
 		break
 	case "Embed":
 		//Embed author
@@ -59,8 +58,7 @@ func messageCreate(session *discordgo.Session,msg *discordgo.MessageCreate){
 		embed.Title = "Embed Test"
 		embed.Author = author
 		embed.Description = "description"
-		_,err := session.ChannelMessageSendEmbed(msg.ChannelID,embed)
-		errr(err)
+		_,err = session.ChannelMessageSendEmbed(msg.ChannelID,embed)
 		break
 	}
 }
